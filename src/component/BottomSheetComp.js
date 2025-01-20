@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
-import RBSheet from 'react-native-raw-bottom-sheet'; // Import the RBSheet component
+import { View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import RBSheet from 'react-native-raw-bottom-sheet';  // For bottom sheet
+import Icon from 'react-native-vector-icons/AntDesign'; // Cross icon from AntDesign
+import LinearGradient from 'react-native-linear-gradient'; // Import LinearGradient
+import { colors } from '../colors/Color'; // Ensure you have colors defined
+
+const { height, width } = Dimensions.get('screen');
 
 class BottomSheetComp extends Component {
   constructor(props) {
@@ -8,87 +13,64 @@ class BottomSheetComp extends Component {
     this.RBSheet = React.createRef(); // Create a ref for RBSheet
   }
 
-  // Expose open and close methods to the parent component via ref
+  // Method to open the bottom sheet
   open = () => {
-    this.RBSheet.current.open(); // Use the ref to call the open() method
+    this.RBSheet.current.open();
   };
 
+  // Method to close the bottom sheet
   close = () => {
-    this.RBSheet.current.close(); // Use the ref to call the close() method
+    this.RBSheet.current.close();
   };
 
   render() {
-    const { data } = this.props; // Get data passed from the parent component
-
     return (
       <RBSheet
         ref={this.RBSheet}
-        height={200}
-        // openDuration={250} // Animation duration for opening
-        // closeDuration={250} // Animation duration for closing
+        height={height} // Set height to a portion of the screen height
         customStyles={{
           container: {
-            justifyContent: 'flex-start', // Align content to the top
-            alignItems: 'center', // Center items horizontally
-            // paddingTop: 20, 
+            // Use LinearGradient as the background for the BottomSheet container
+            backgroundColor: 'transparent',  // Make container transparent so gradient can be seen
+            // borderTopLeftRadius: 20,  // Optional: round the corners of the bottom sheet
+            // borderTopRightRadius: 20,  // Optional: round the corners of the bottom sheet
           },
         }}
       >
-        <View style={styles.sheetContainer}>
-
+        {/* Apply Linear Gradient Background */}
+        <LinearGradient
+          colors={[colors.DarkBrown, colors.Green,colors.Primary]}  // Define gradient colors here
+          style={styles.gradientContainer}
+        >
+          {/* Close Icon (down arrow) in the top-right corner */}
           <TouchableOpacity
             style={styles.closeButton}
-            onPress={this.close}
+            onPress={this.close} // Close the bottom sheet when clicked
           >
-            <Text style={styles.closeButtonText}>Close</Text>
+            <Icon name="down" size={30} color={colors.White} />
           </TouchableOpacity>
 
-
-          <View style={styles.contentContainer}>
-            <Text style={styles.title}>{data.title}</Text>
-            <Text style={styles.description}>{data.description}</Text>
-          </View>
-        </View>
+          {/* Render the dynamic content */}
+          {this.props.content}
+        </LinearGradient>
       </RBSheet>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  // Main container inside RBSheet for all content
-  sheetContainer: {
+  gradientContainer: {
     flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingHorizontal: 20, // Add some padding around
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    paddingTop: 20,  // Adjust the padding if needed
   },
-  // Close button at the top-right of the sheet
   closeButton: {
-    position: 'absolute',
-    top: 10,  // Position 10 units from top
-    right: 20, // Position 20 units from right edge
-    padding: 10,  // Add padding around the button
-  },
-  closeButtonText: {
-    color: 'grey', // Set color to grey for the text
-    fontSize: 16,  // Adjust font size as needed
-  },
-  // Content container for title and description
-  contentContainer: {
-    marginTop: 40,  // Add some space from the top
-    alignItems: 'center',  // Center the content horizontally
-    paddingVertical: 20,  // Add vertical padding
-  },
-  title: {
-    fontSize: 18,  // Title font size
-    fontWeight: 'bold',  // Bold font for the title
-    marginBottom: 10, // Margin to separate title and description
-  },
-  description: {
-    fontSize: 14,  // Smaller font size for description
-    textAlign: 'center',  // Center-align the description
-    color: 'grey',  // Grey color for the description
+    position: 'absolute', // Position the button at the top-right corner
+    top: 10,  // 10 units from the top
+    right: 0,  // 10 units from the right edge
+    left:10,
+    padding: 10,  // Add some padding to make the button clickable
   },
 });
 

@@ -5,6 +5,7 @@ export const songData = [
         singer: 'Shafqat Amanat Ali',
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/dildara-ra-one-65569.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id: 2,
@@ -13,6 +14,7 @@ export const songData = [
         album: 'Album 2',
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/paradox-jadugar-jaadugar-mobcup-vip-65105.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id: 3,
@@ -21,6 +23,7 @@ export const songData = [
         album: 'Album 3',
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/khuda-ko-dikh-raha-hoga-na-dil-tujhse-juda-hoga-haunted-ringtone-free-downl-65104.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id: 4,
@@ -29,6 +32,7 @@ export const songData = [
         album: 'Album 4',
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/chaleya-female-65068.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id: 5,
@@ -37,6 +41,7 @@ export const songData = [
         album: 'Album 5',
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/10756-best-punjabi-gori-tere-jiya-hor-na-koi-milya-ringtone-ringtone-mp3-mp-65012.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id: 6,
@@ -45,6 +50,7 @@ export const songData = [
         album: 'Album 6',
         uri: 'https://dl.prokerala.com/downloads/ringtones/files/mp3/256k-often-2-64850.mp3',
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id:7,
@@ -52,6 +58,7 @@ export const songData = [
         singer:"Arijit Singh",
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/o-mahi-o-mahi-ringtone-mobcup-com-in-64560.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id:8,
@@ -59,6 +66,7 @@ export const songData = [
         singer:"Diljit Dosanjh",
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/born-to-shine-punjabi-64346.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id:9,
@@ -66,6 +74,7 @@ export const songData = [
         singer:"Niranajn",
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/pehla-tere-nain-dekheya-64039.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id:10,
@@ -73,6 +82,7 @@ export const songData = [
         singer:"Atif Aslam",
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/new-tu-jaane-na-626-63958.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
     {
         id:11,
@@ -80,6 +90,7 @@ export const songData = [
         singer:"Vishal Misra",
         url:"https://dl.prokerala.com/downloads/ringtones/files/mp3/animal-pehle-bhi-main-ringtone-download-link-904182062-63922.mp3",
         img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
     },
 ]
 

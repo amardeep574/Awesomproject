@@ -3,6 +3,7 @@ import { View, Text, FlatList, Image, Dimensions, StyleSheet, TouchableOpacity} 
 import { songData } from '../songlist/SongData';
 import { colors } from '../colors/Color';
 import Header from '../component/Header';
+import TrackPlayer, { Capability, State } from 'react-native-track-player';
 
 const { height, width } = Dimensions.get('screen');
 
@@ -10,9 +11,49 @@ class PlayList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // You can manage state here if needed (e.g., selected song, loading state, etc.)
+            playerState: State.Stopped, // Track the player state (playing, paused, etc.)
         };
     }
+
+     async componentDidMount() {
+            try{
+            // StatusBar.setHidden(true, 'fade');
+          
+            // await this.loadSongData(this.state.songId);
+         this.setupPlayer();
+           
+        }catch(eroror){
+            console.log("error",eroror)
+        }
+           
+        }
+
+     setupPlayer = async () => {
+         
+         try {
+            await TrackPlayer.setupPlayer();
+               const state = await TrackPlayer.getState();
+               if (state === State.None || state === State.Stopped) {
+           
+              await TrackPlayer.updateOptions({
+                    capabilities: [
+                        Capability.Play,
+                        Capability.Pause,
+                        Capability.SkipToNext,
+                        Capability.SkipToPrevious,
+                        Capability.Stop,
+                    ],
+                    compactCapabilities: [Capability.Play, Capability.Pause],
+                });
+                await this.updatePlayerQueue();
+            } else {
+                console.log("TrackPlayer already set up. Skipping setup.");
+                await this.updatePlayerQueue();
+            }
+         } catch (error) {
+            console.log("erorr",error)
+         }
+        };
 
     renderItem = ({ item }) => (
         <View style={styles.itemContainer}>
