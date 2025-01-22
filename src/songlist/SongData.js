@@ -92,6 +92,14 @@ export const songData = [
         img: require('../images/song_img.jpg'),
         artwork: require('../images/song_img.jpg'),
     },
+    {
+        id:12,
+        song:"Wavy",
+        singer:"Karan Aujla",
+        url:"https://www.ringtonedna.com/wp-content/uploads/2024/11/Wavy-Karan-Aujla-_-Punjabi.mp3",
+        img: require('../images/song_img.jpg'),
+        artwork: require('../images/song_img.jpg'),
+    }
 ]
 
 

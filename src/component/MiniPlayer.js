@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image,Dimensions } from 'react-native';
 import Icon from "react-native-vector-icons/AntDesign";
 import { colors } from '../colors/Color';
+
+const {height,width} = Dimensions.get('screen')
 
 class MiniPlayer extends Component {
   render() {
@@ -30,17 +32,20 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginLeft:20,
+    width:width*.9,
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: colors.DarkBrown,
+    backgroundColor: colors.Black,
     padding: 10,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     paddingHorizontal: 15,
     height: 70,
     justifyContent: 'space-between',
+    
   },
   image: {
     width: 50,

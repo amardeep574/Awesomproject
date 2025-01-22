@@ -266,7 +266,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   playButton: {
-    padding: 'auto',
+    // padding: 'auto',
+    marginRight:10
   },
   songListContainer: {
     paddingVertical: 30,
@@ -274,7 +275,7 @@ const styles = StyleSheet.create({
   },
   searchBoxContainer: {
     marginTop: 10,
-    width: width * 0.70,
+    width: width * 0.7,
     height: height * 0.05,
     backgroundColor: colors.Primary,
     borderRadius: 3,
